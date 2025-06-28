@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Profile from './Components/Assignment1'
 import BackgroundChanger, { BackgroundChangerContext } from './Components/BackgroundChanger'
 import ColorProvider from './Context/ColorContext'
+import ParagraphGenerator from './Components/ParagraphGenerator'
 
 
 function App() {
@@ -25,9 +26,10 @@ function App() {
   return (
     // <Profile userProfile={data} />
     // <BackgroundChanger/>
-    <ColorProvider>
-      <BackgroundChangerContext/>
-    </ColorProvider>
+    // <ColorProvider>
+    //   <BackgroundChangerContext/>
+    // </ColorProvider>
+    <ParagraphGenerator/>
   )
 }
 
