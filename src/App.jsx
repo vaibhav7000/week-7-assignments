@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Profile from './Components/Assignment1'
-import './App.css'
+import BackgroundChanger, { BackgroundChangerContext } from './Components/BackgroundChanger'
+import ColorProvider from './Context/ColorContext'
+
 
 function App() {
   const data = {
@@ -21,7 +23,11 @@ function App() {
 
 
   return (
-    <Profile userProfile={data} />
+    // <Profile userProfile={data} />
+    // <BackgroundChanger/>
+    <ColorProvider>
+      <BackgroundChangerContext/>
+    </ColorProvider>
   )
 }
 

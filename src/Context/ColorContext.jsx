@@ -4,6 +4,7 @@ const ColorContext = createContext();
 
 export default function ColorProvider({children}) {
     const [currentColor, setCurrentColor] = useState("white");
+    const [count, setCount] = useState(0);
 
     const allColors = useMemo(function() {
         const tempColors = [{
@@ -48,7 +49,7 @@ export default function ColorProvider({children}) {
 
     return (
         <ColorContext.Provider value={
-            {allColors, currentColor, setCurrentColor}
+            {allColors, currentColor, setCurrentColor, count, setCount}
         }>
             {children}
         </ColorContext.Provider>
@@ -58,3 +59,5 @@ export default function ColorProvider({children}) {
 export const useColor = function() {
     return useContext(ColorContext);
 }
+
+// Whenever any component uses the ContextAPI "context" to access the value, it gets the whole context as a value, destructure it according to it and when any value inside the context changes by any component, the "whole context gets updated" with a new value => all the components that uses the context will automatically update now
